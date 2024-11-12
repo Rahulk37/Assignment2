@@ -1,0 +1,20 @@
+<!-- store.component.html -->
+<div class="product-list">
+  <div *ngFor="let product of products" class="product-box">
+    <img
+      [src]="product.imageUrl"
+      alt="{{ product.caption }}"
+      class="product-image"
+    />
+    <h3 class="product-caption">{{ product.caption }}</h3>
+    <p class="product-price">₹{{ product.price }}</p>
+    <button (click)="addToCart(product)" class="add-to-cart-btn">
+      Add to Cart
+    </button>
+  </div>
+</div>
+
+<!-- Success Message -->
+<div *ngIf="successMessage" class="success-message">
+  {{ successMessage }}
+</div>
